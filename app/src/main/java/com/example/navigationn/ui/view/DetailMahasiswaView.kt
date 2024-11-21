@@ -23,5 +23,17 @@ fun DetailMahasiswaView(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp)
-    ) {}
+    ) {
+        listDataMhs.forEach { data ->
+            DetailMhs(
+                judul = data.first,
+                isi = data.second
+            )
+        }
+    }
 }
+
+@Composable
+fun DetailMhs(
+    judul:String, isi: String
+){}
