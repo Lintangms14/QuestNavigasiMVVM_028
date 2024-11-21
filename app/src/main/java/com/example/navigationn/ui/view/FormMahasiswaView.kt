@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -68,6 +69,34 @@ fun FormMahasiswaView(
                     Text(item)
                 }
             }
+        }
+        TextField(
+            modifier = modifier.fillMaxWidth().padding(5.dp),
+            value = email,
+            onValueChange = { email = it },
+            label = { Text("email") },
+            placeholder = { Text("Masukkan email Anda") }
+        )
+
+        TextField(
+            modifier = modifier.fillMaxWidth().padding(5.dp),
+            value = noTelepon,
+            onValueChange = { noTelepon = it },
+            label = { Text("noTelepon") },
+            placeholder = { Text("Masukkan noTelepon Anda") }
+        )
+
+        TextField(
+            modifier = modifier.fillMaxWidth().padding(5.dp),
+            value = alamat,
+            onValueChange = { alamat = it },
+            label = { Text("alamat") },
+            placeholder = { Text("Masukkan alamat Anda") }
+        )
+        ElevatedButton(onClick = {
+            onSubmitClick(listData)
+        }) {
+            Text("Submit")
         }
     }
 }
